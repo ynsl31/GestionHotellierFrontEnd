@@ -1,6 +1,4 @@
-(function() {
 	'use strict';
-
 	/*----------------------------------------
 		Detect Mobile
 	----------------------------------------*/
@@ -534,7 +532,7 @@
 	/*----------------------------------------
 		Document Ready 
 	----------------------------------------*/
-	$(document).ready(function(){
+	/*$(document).ready(function(){
 		menuHover();
 		counterWayPoint();
 		contentWayPoint();
@@ -548,13 +546,6 @@
 		roomFadeHover();
 		hiResImg();
 		dateTimePicker();
-	});
-
-	$(window).load(function(){
-		owlCarousel();
-		flexSlider();
-	});
+	});*/
 
 	
-
-})();
