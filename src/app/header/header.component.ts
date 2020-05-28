@@ -24,19 +24,6 @@ export class HeaderComponent implements OnInit {
   constructor() { }
  
   ngOnInit(): void {
-  menuHover();
-  counterWayPoint();
-  contentWayPoint();
-  backToTop();
-  magnificPopupControl();
-  stellarInit();
-  progressBarControl();
-  mobileMenuControl();
-  nextScroll();
-  inlineSVG();
-  roomFadeHover();
-  hiResImg();
-  dateTimePicker();
   }
 
 }

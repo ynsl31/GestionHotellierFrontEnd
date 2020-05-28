@@ -12,6 +12,12 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { DashfooterComponent } from './dashfooter/dashfooter.component';
 import { DashReceptionistComponent } from './dashboareds/dash-receptionist/dash-receptionist.component';
 import { DashChefreceptionistComponent } from './dashboareds/dash-chefreceptionist/dash-chefreceptionist.component';
+import { LoginService } from './services/login.service';
+import {FormsModule} from"@angular/forms";
+import { HttpClientModule } from '@angular/common/http';
+import { StatisticsComponent } from './statistics/statistics.component';
+import { ListclientsComponent } from './listclients/listclients.component';
+import { ClientsService } from './services/clients.service';
 
 @NgModule({
   declarations: [
@@ -24,13 +30,17 @@ import { DashChefreceptionistComponent } from './dashboareds/dash-chefreceptioni
     SidebarComponent,
     DashfooterComponent,
     DashReceptionistComponent,
-    DashChefreceptionistComponent
+    DashChefreceptionistComponent,
+    StatisticsComponent,
+    ListclientsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [LoginService,ClientsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
