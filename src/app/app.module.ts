@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { ListclientsComponent } from './listclients/listclients.component';
 import { ClientsService } from './services/clients.service';
+import { ClientformComponent } from './clientform/clientform.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ClientsService } from './services/clients.service';
     DashReceptionistComponent,
     DashChefreceptionistComponent,
     StatisticsComponent,
-    ListclientsComponent
+    ListclientsComponent,
+    ClientformComponent
   ],
   imports: [
     BrowserModule,
