@@ -3,7 +3,7 @@
   <a href="index3.html" class="brand-link" style="background-color: #903479;">
     <img src="../assets/img/AdminLTELogo.png" class="brand-image img-circle elevation-3"
       style="opacity: .8;background-color: #903479;">
-    <span class="brand-text font-weight-light">Receptioniste</span>
+    <span class="brand-text font-weight-light">{{role}}</span>
   </a>
 
   <!-- Sidebar -->
@@ -37,7 +37,7 @@
                with font-awesome or any other icon font library -->
 
               <li class="nav-header">Gestion</li>
-              <li class="nav-item has-treeview">
+              <li  *ngIf="role=='Receptioniste'"  class="nav-item has-treeview">
                 <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-hotel"></i>
                   <p>
@@ -66,7 +66,7 @@
                   </li>
                 </ul>
               </li>
-              <li class="nav-item has-treeview">
+              <li *ngIf="role=='Receptioniste'"  class="nav-item has-treeview">
                 <a href="#" class="nav-link">
                   <i class="nav-icon far fa-envelope"></i>
                   <p>
@@ -82,7 +82,7 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="pages/mailbox/compose.html" class="nav-link">
+                    <a routerLink="/receptionistBoared/clients/add/-1" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Add Clients</p>
                     </a>
@@ -93,6 +93,88 @@
                       <p>Clients statistics</p>
                     </a>
                   </li>
+                </ul>
+              </li>
+              <li *ngIf="role=='chefreception'" class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-bed"></i>
+                  <p>
+                    Gestion des Chambre
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul  class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a routerLink="chefreceptionBoared/chambres" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Chembres</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a routerLink="chefreceptionBoared/chembers/add/-1" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Add Chembres</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/chefreceptionBoared/chambres/statistics" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Chembers statistics</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li *ngIf="role=='chefreception'" class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-bed"></i>
+                  <p>
+                    Gestion des factures
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul  class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a routerLink="chefreceptionBoared/factures" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>factures</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a routerLink="chefreceptionBoared/factures/add/-1" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Add factures</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="/chefreceptionBoared/factures/statistics" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>factures statistics</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li *ngIf="role=='chefreception'" class="nav-item has-treeview">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-bed"></i>
+                  <p>
+                    Gestion des Tarifs
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul  class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a routerLink="chefreceptionBoared/tarifs" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Tarifs</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a routerLink="chefreceptionBoared/tarifs/add/-1" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Add Tarifs</p>
+                    </a>
+                  </li>
+                 
                 </ul>
               </li>
             </ul>

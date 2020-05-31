@@ -19,6 +19,9 @@ import { StatisticsComponent } from './statistics/statistics.component';
 import { ListclientsComponent } from './listclients/listclients.component';
 import { ClientsService } from './services/clients.service';
 import { ClientformComponent } from './clientform/clientform.component';
+import { ChamberlistComponent } from './chefrep/chambers/chamberlist/chamberlist.component';
+import { ChamberformComponent } from './chefrep/chambers/chamberform/chamberform.component';
+import { ChamberviewComponent } from './chefrep/chambers/chamberview/chamberview.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { ClientformComponent } from './clientform/clientform.component';
     DashChefreceptionistComponent,
     StatisticsComponent,
     ListclientsComponent,
-    ClientformComponent
+    ClientformComponent,
+    ChamberlistComponent,
+    ChamberformComponent,
+    ChamberviewComponent
   ],
   imports: [
     BrowserModule,

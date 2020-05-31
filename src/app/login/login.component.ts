@@ -40,8 +40,11 @@ loginuser(){
     if (this.user!=null){
       localStorage.setItem('username', this.user.login);
       localStorage.setItem('pwd', this.user.pwd);
+      localStorage.setItem('role', this.user.profile);
      if(this.user.profile=="receptioniste"){
       this.route.navigate(["/receptionistBoared"]);
+     }  if(this.user.profile=="chefreception"){
+      this.route.navigate(["/chefreceptionBoared"]);
      }
     }
 
