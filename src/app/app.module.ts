@@ -22,6 +22,8 @@ import { ClientformComponent } from './clientform/clientform.component';
 import { ChamberlistComponent } from './chefrep/chambers/chamberlist/chamberlist.component';
 import { ChamberformComponent } from './chefrep/chambers/chamberform/chamberform.component';
 import { ChamberviewComponent } from './chefrep/chambers/chamberview/chamberview.component';
+import { TarifformComponent } from './chefrep/tarifs/tarifform/tarifform.component';
+import { TariflistComponent } from './chefrep/tarifs/tariflist/tariflist.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { ChamberviewComponent } from './chefrep/chambers/chamberview/chamberview
     ClientformComponent,
     ChamberlistComponent,
     ChamberformComponent,
-    ChamberviewComponent
+    ChamberviewComponent,
+    TarifformComponent,
+    TariflistComponent
   ],
   imports: [
     BrowserModule,

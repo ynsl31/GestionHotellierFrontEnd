@@ -1,1 +1,164 @@
-<p>chamberlist works!</p>
+<app-navbar></app-navbar>
+<app-sidebar></app-sidebar>
+<div class="content-wrapper" style="min-height: 1200.88px;">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>chambres</h1>
+                </div>
+
+
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">DashBoared</a></li>
+                        <li class="breadcrumb-item active">chambres</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="alert alert-success alert-dismissible" *ngIf="message">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h5><i class="icon fas fa-check"></i> Alert!</h5>
+                {{message}}
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <section class="content">
+
+        <!-- Default box -->
+        <div class="card">
+            <div class="card-header" style="background-color: #903479;">
+                <h3 class="card-title" style="color: white;">List des chambres</h3>
+
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
+                        title="Collapse">
+                        <i class="fas fa-minus"></i></button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip"
+                        title="Remove">
+                        <i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <div class="card-body p-0" style="display: block;">
+                <table class="table table-striped projects">
+                    <thead>
+                        <tr>
+                            <th style="width: 1%">
+                                #
+                            </th>
+                            <th style="width: 5%" class="text-center">
+                                image
+                            </th>
+                            <th style="width: 5%" class="text-center">
+                                reference
+                            </th>
+                            <th style="width: 5%" class="text-center">
+                                Nb lit
+                            </th>
+                            <th style="width: 5%" class="text-center">
+                                etat
+                            </th>
+                            <th style="width: 5%" class="text-center">
+                                equipment
+                            </th>
+                            <th style="width: 5%" class="text-center">
+                                superficie
+                            </th>
+                            <th style="width: 5%" class="text-center">
+                                vue
+                            </th>
+                            <th style="width: 5%" class="text-center">
+                                etage
+                            </th>
+                            <th style="width: 5%" class="text-center">
+                                categorie
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let chambre of chambres;">
+                            <td>
+                                {{chambre.id}}
+                            </td>
+                            <td>
+                                <img style="width:250px; height:250px;" src="{{chambre.image}}" />
+
+
+                            </td>
+                            <td>
+                                <p *ngIf="chambre.refrence"> {{chambre.refrence}}</p>
+                            </td>
+                            <td>
+                                <p *ngIf="chambre.nbLit"> {{chambre.nbLit}} lits</p>
+                            </td>
+                            <td>
+                                <span class="badge badge-success" *ngIf="chambre.etat; else elseBlock">En service</span>
+                                <ng-template #elseBlock> <span class="badge badge-danger" >Hors service</span></ng-template>
+                            </td>
+                            <td>
+
+                                <ul class=" list-inline">
+
+                                    <li *ngIf="chambre.wifi" class="list-inline-item">
+                                        <i class="fas fa-wifi"></i>
+                                    </li>
+
+                                    <li *ngIf="chambre.telephone" class="list-inline-item">
+                                        <i class="fas fa-phone-alt"></i>
+                                    </li>
+                                    <li *ngIf="chambre.television" class="list-inline-item">
+                                        <i class="fas fa-tv"></i>
+                                    </li>
+                                </ul>
+                                <ul class=" list-inline">
+                                    <li *ngIf="chambre.douche" class="list-inline-item">
+                                        <i class="fas fa-bath"></i>
+                                    </li>
+                                    <li *ngIf="chambre.terrasse" class="list-inline-item">
+                                        <a>Terasse</a>
+                                    </li>
+
+                                </ul>
+                            </td>
+                            <td>
+                                <p *ngIf="chambre.superficie"> {{chambre.superficie}} m²</p>
+                            </td>
+                            <td>
+                                <p *ngIf="chambre.vue"> {{chambre.vue}}</p>
+                            </td>
+                            <td>
+                                <p *ngIf="chambre.etage"> N°{{chambre.etage.num}}</p>
+                            </td>
+                            <td>
+                                <p *ngIf="chambre.categorieChambre"> {{chambre.categorieChambre.libelle}} </p>
+                            </td>
+                            <td class="project-actions text-right">
+                                <button class="btn btn-primary btn-sm" href="#">
+                                    <i class="fas fa-folder"></i>
+
+                                    View
+                                </button>
+                                <button class="btn btn-info btn-sm" (click)="updatechambre(chambre.id)">
+                                    <i class="fas fa-pencil-alt">
+                                    </i>
+                                    Edit
+                                </button>
+                                <button class="btn btn-danger btn-sm" (click)="deletechambre(chambre.id)">
+                                    <i class="fas fa-trash">
+                                    </i>
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+
+    </section>
+</div>
+<app-dashfooter></app-dashfooter>

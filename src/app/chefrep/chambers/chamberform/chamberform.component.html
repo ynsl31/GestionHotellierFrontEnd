@@ -1,1 +1,188 @@
-<p>chamberform works!</p>
+<app-navbar></app-navbar>
+<app-sidebar></app-sidebar>
+<div class="content-wrapper" style="min-height: 1200.88px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Chambre</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">chefrefdash</a></li>
+                        <li class="breadcrumb-item active">Add Chambres</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- left column -->
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="card card-primary">
+                        <div class="card-header" style="background-color: #903479;">
+                            <h3 class="card-title">please enter the informations</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <!-- form start -->
+                        <form (ngSubmit)="onSubmit(chembreModelForm)" #chembreModelForm="ngForm">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Reference</label>
+                                            <input type="text" class="form-control" [(ngModel)]="chembre.refrence "
+                                                name="reference" placeholder="Enter reference" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="superficie"> superficie</label>
+                                            <input type="number" class="form-control" [(ngModel)]="chembre.superficie"
+                                                name="superficie" placeholder="Entez superficie" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="etage"> Etage</label>
+                                            <select class="custom-select" [(ngModel)]="chembre.etage.id" name="etage">
+                                                <option [value]="etage.id" *ngFor="let etage of etages">Etage N°{{etage.num}}</option>
+                                            </select>
+                                        </div>
+
+
+                                        <label for="nblit">Equipement</label>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="custom-control custom-checkbox">
+                                                    <div class="form-group">
+                                                        <input [(ngModel)]="chembre.douche" class="custom-control-input"
+                                                            type="checkbox" id="customCheckbox1" name="douche">
+                                                        <label for="customCheckbox1" class="custom-control-label">douche
+                                                        </label></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="custom-control custom-checkbox">
+                                                    <div class="form-group">
+                                                        <input [(ngModel)]="chembre.television"
+                                                            class="custom-control-input" type="checkbox"
+                                                            id="customCheckbox2" name="tv">
+                                                        <label for="customCheckbox2"
+                                                            class="custom-control-label">television</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="custom-control custom-checkbox">
+                                                    <div class="form-group">
+                                                        <input [(ngModel)]="chembre.wifi"  name="wifi" class="custom-control-input"
+                                                            type="checkbox" id="customCheckbox3">
+                                                        <label for="customCheckbox3"
+                                                            class="custom-control-label">Wifi</label></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="custom-control custom-checkbox">
+                                                    <div class="form-group">
+                                                        <input [(ngModel)]="chembre.telephone" name="tel"
+                                                            class="custom-control-input" type="checkbox"
+                                                            id="customCheckbox4">
+                                                        <label for="customCheckbox4"
+                                                            class="custom-control-label">telephone</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="custom-control custom-checkbox">
+                                                    <div class="form-group">
+                                                        <input [(ngModel)]="chembre.terrasse"
+                                                            class="custom-control-input" type="checkbox"
+                                                            id="customCheckbox5" name="terasse">
+                                                        <label for="customCheckbox5"
+                                                            class="custom-control-label">terrase</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6">
+
+                                        <div class="form-group">
+                                            <label for="nblit">vue</label>
+                                            <select class="custom-select" [(ngModel)]="chembre.vue" name="vue">
+                                                <option [value]="item.vue" *ngFor="let item of items">{{item.vue}}</option>
+
+                                            </select>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="nblit"> Nombre des lits</label>
+                                            <input type="number" class="form-control" [(ngModel)]="chembre.nbLit"
+                                                name="nblit" placeholder="Enternombre des lits " required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="nblit">categorie de la chambre </label>
+                                            <select class="custom-select" [(ngModel)]="chembre.categorieChambre.id"
+                                            name="categorieChambre">
+                                                <option [value]="c.id" *ngFor="let c of categories ">{{c.libelle}}</option>
+
+
+                                            </select>
+
+                                        </div>
+
+                                        <div class="form-group">
+
+                                            <label for="nblit">Etat de la chambre</label>
+                                            <select class="custom-select" [(ngModel)]="chembre.etat" name="etat">
+                                                <option [value]="etat.etat" *ngFor="let etat of etats">{{etat.name}}</option>
+                                                
+
+                                            </select>
+                                               
+                                                
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <!-- <label for="customFile">Custom File</label> -->
+                                            <label>Image de la chambre</label>
+                                            <div class="custom-file">
+                                                <input (change)="handleFileInput($event.target.files)" type="file"
+                                                    class="custom-file-input" id="customFile">
+                                                <label class="custom-file-label" for="customFile">Choose file</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary" [disabled]="!chembreModelForm.form.valid"
+                                    style="background-color: #903479;">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.card -->
+
+                </div>
+                <!--/.col (left) -->
+
+                <!--/.col (right) -->
+            </div>
+            <!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+<app-dashfooter></app-dashfooter>

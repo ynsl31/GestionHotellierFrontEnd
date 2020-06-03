@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../services/login.service';
+import { NgForm } from '@angular/forms';
 
 export class User {
    id : number;
@@ -31,9 +32,7 @@ export class LoginComponent implements OnInit {
     
   ngOnInit(): void {
   }
-loginuser(){
-  console.log(this.login)
-  console.log(this.pwd)
+  onSubmit(loginForm : NgForm){
   this.logservice.login(this.login,this.pwd) .subscribe(
     data=>this.user=data
     );

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import { Chambre } from '../chefrep/chambers/chamberlist/chamberlist.component';
 import { Observable } from 'rxjs';
-const baseUrl = 'http://localhost:8081/chambres/';
+const baseUrl = 'http://localhost:8081/chambres';
 @Injectable({
   providedIn: 'root'
 })
@@ -16,7 +16,7 @@ export class ChambersService {
   }
 
   getChambre(id) {
-    return this.http.get<Chambre>(`${baseUrl}/${id}`);
+    return this.http.get<Chambre>(`${baseUrl}/find/${id}`);
   }
 
   createChambre(Chambre : Chambre): Observable<any> {
