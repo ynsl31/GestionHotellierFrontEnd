@@ -1,1 +1,95 @@
-<p>tarifform works!</p>
+<app-navbar></app-navbar>
+<app-sidebar></app-sidebar>
+<div class="content-wrapper" style="min-height: 1200.88px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Tarif</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">chefrefdash</a></li>
+                        <li class="breadcrumb-item active">Add Tarifs</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <form (ngSubmit)="onSubmit()" #tarifModelForm="ngForm">
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-12">
+                        <!-- general form elements -->
+                        <div class="card card-primary">
+                            <div class="card-header" style="background-color: #903479;">
+                                <h3 class="card-title">please enter Tarifs informations</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <!-- form start -->
+
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Tarif </label>
+                                            <select class="custom-select" [(ngModel)]="tarifs.tarif.id" name="tarif">
+                                                <option [value]="tarif.id" *ngFor="let tarif of tariflist">{{tarif.description}}</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Saison</label>
+                                            <select class="custom-select" [(ngModel)]="tarifs.saison.id" name="etage">
+                                                <option [value]="saison.id" *ngFor="let saison of saisonlist">{{saison.saison}}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Prix</label>
+                                            <input type="number" class="form-control" [(ngModel)]="tarifs.prixFinal"
+                                                name="prix" placeholder="Enter prix"  required />
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                        
+                                <!-- /.card -->
+
+                            </div>
+                            <!--/.col (left) -->
+                            <!--/.col (right) -->
+                        </div>
+                    </div>
+                </div>
+              
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary" [disabled]="!tarifModelForm.form.valid"
+                                style="background-color: #903479;">Submit</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+
+
+                <!-- /.container-fluid -->
+
+                <!-- /.content -->
+            </form>
+        </div>
+    </section>
+</div>
+<app-dashfooter></app-dashfooter>

@@ -8,6 +8,8 @@ import { ClientformComponent } from './clientform/clientform.component';
 import { ChamberlistComponent } from './chefrep/chambers/chamberlist/chamberlist.component';
 import { ChamberformComponent } from './chefrep/chambers/chamberform/chamberform.component';
 import { ChamberviewComponent } from './chefrep/chambers/chamberview/chamberview.component';
+import { TariflistComponent } from './chefrep/tarifs/tariflist/tariflist.component';
+import { TarifformComponent } from './chefrep/tarifs/tarifform/tarifform.component';
 
 
 const routes: Routes = [
@@ -22,9 +24,9 @@ const routes: Routes = [
   {path: 'chefreceptionBoared/factures',component : ChamberlistComponent},
   {path: 'chefreceptionBoared/factures/add/:id',component : ChamberformComponent},
   {path: 'chefreceptionBoared/factures/:id',component : ChamberviewComponent},
-  {path: 'chefreceptionBoared/tarifs',component : ChamberlistComponent},
-  {path: 'chefreceptionBoared/tarifs/add/:id',component : ChamberformComponent},
-  {path: 'chefreceptionBoared/tarifs/:id',component : ChamberviewComponent},
+  {path: 'chefreceptionBoared/tarifs',component : TariflistComponent},
+  {path: 'chefreceptionBoared/tarifs/add/:id',component :TarifformComponent},
+  {path: 'chefreceptionBoared/tarifs/:id',component : TariflistComponent},
 
   {path: '',component : IndexComponent}
 ];

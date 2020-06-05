@@ -31,8 +31,8 @@ export class TarifService {
     return this.http.get<Tarif>(`${baseUrl}/find/${id}`);
   }
 
-  createTarif(Tarif : Tarif): Observable<Tarif> {
-    return this.http.post<Tarif>(baseUrl+'/save',Tarif);
+  createTarif(tarif : Tarif): Observable<Tarif> {
+    return this.http.post<Tarif>(baseUrl+'/save',tarif);
   }
   handleError(error: any) {
     throw new Error("Method not implemented.");
