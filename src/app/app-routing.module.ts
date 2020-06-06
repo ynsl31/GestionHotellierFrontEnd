@@ -10,6 +10,9 @@ import { ChamberformComponent } from './chefrep/chambers/chamberform/chamberform
 import { ChamberviewComponent } from './chefrep/chambers/chamberview/chamberview.component';
 import { TariflistComponent } from './chefrep/tarifs/tariflist/tariflist.component';
 import { TarifformComponent } from './chefrep/tarifs/tarifform/tarifform.component';
+import { FacturelistComponent } from './chefrep/facture/facturelist/facturelist.component';
+import { FactureformComponent } from './chefrep/facture/factureform/factureform.component';
+import { FactureComponent } from './chefrep/facture/facture/facture.component';
 
 
 const routes: Routes = [
@@ -21,9 +24,9 @@ const routes: Routes = [
   {path: 'chefreceptionBoared/chambres',component : ChamberlistComponent},
   {path: 'chefreceptionBoared/chembers/add/:id',component : ChamberformComponent},
   {path: 'chefreceptionBoared/chembers/:id',component : ChamberviewComponent},
-  {path: 'chefreceptionBoared/factures',component : ChamberlistComponent},
-  {path: 'chefreceptionBoared/factures/add/:id',component : ChamberformComponent},
-  {path: 'chefreceptionBoared/factures/:id',component : ChamberviewComponent},
+  {path: 'chefreceptionBoared/factures',component : FacturelistComponent},
+  {path: 'chefreceptionBoared/factures/add/:id',component : FactureformComponent},
+  {path: 'chefreceptionBoared/factures/:id',component : FactureComponent},
   {path: 'chefreceptionBoared/tarifs',component : TariflistComponent},
   {path: 'chefreceptionBoared/tarifs/add/:id',component :TarifformComponent},
   {path: 'chefreceptionBoared/tarifs/:id',component : TariflistComponent},

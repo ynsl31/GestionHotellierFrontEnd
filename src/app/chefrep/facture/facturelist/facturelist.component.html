@@ -1,0 +1,114 @@
+<app-navbar></app-navbar>
+<app-sidebar></app-sidebar>
+<div class="content-wrapper" style="min-height: 1200.88px;">
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>factures</h1>
+                </div>
+
+
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">DashBoared</a></li>
+                        <li class="breadcrumb-item active">factures</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="alert alert-success alert-dismissible" *ngIf="message">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h5><i class="icon fas fa-check"></i> Alert!</h5>
+                {{message}}
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <section class="content">
+
+        <!-- Default box -->
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">List factures</h3>
+
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
+                        title="Collapse">
+                        <i class="fas fa-minus"></i></button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip"
+                        title="Remove">
+                        <i class="fas fa-times"></i></button>
+                </div>
+            </div>
+            <div class="card-body p-0" style="display: block;">
+                <table class="table table-striped projects">
+                    <thead>
+                        <tr>
+                            <th style="width: 5%">
+                                Ref
+                            </th>
+                            <th style="width:10%">
+                                Ref reservation
+                            </th>
+                            <th style="width:10%" class="text-center">
+                                Client
+                            </th>
+                            <th style="width: 15%" class="text-center">
+                                Date reservation
+                            </th>
+                            <th style="width: 15%" class="text-center">
+                                Date Facture
+                            </th>
+                            <th style="width: 15%" class="text-center">
+                                Mode Paiement
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let ts of tslist;">
+                            <td class="text-center">
+                                {{ts.reference}}
+                            </td>
+                            <td  class="text-center">
+                                {{ts.reservations[0].reference}}
+                            </td>
+                            <td  class="text-center">
+                                {{ts.reservations[0].client.nom}}  {{ts.reservations[0].client.prenom}}
+                            </td>
+                            <td  class="text-center">
+                                {{ts.reservations[0].dateReservation}}
+                            </td>
+                            <td class="text-center">
+                                {{ts.dateFacture}}
+                            </td>
+                            <td class="text-center" >
+                                {{ts.modePaiement.type}}
+                            </td>
+                       
+                            <td class="project-actions text-right">
+                                <button class="btn btn-primary btn-sm" href="#">
+                                    <i class="fas fa-folder">
+                                    </i>
+                                    View
+                                </button>
+                                <button class="btn btn-info btn-sm" (click)="updatets(ts.id)">
+                                    <i class="fas fa-pencil-alt">
+                                    </i>
+                                    Edit
+                                </button>
+                                <button class="btn btn-danger btn-sm" (click)="deletets(ts.id)">
+                                    <i class="fas fa-trash">
+                                    </i>
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </section>
+</div>
+<app-dashfooter></app-dashfooter>

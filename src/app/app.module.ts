@@ -24,6 +24,9 @@ import { ChamberformComponent } from './chefrep/chambers/chamberform/chamberform
 import { ChamberviewComponent } from './chefrep/chambers/chamberview/chamberview.component';
 import { TarifformComponent } from './chefrep/tarifs/tarifform/tarifform.component';
 import { TariflistComponent } from './chefrep/tarifs/tariflist/tariflist.component';
+import { FacturelistComponent } from './chefrep/facture/facturelist/facturelist.component';
+import { FactureformComponent } from './chefrep/facture/factureform/factureform.component';
+import { FactureComponent } from './chefrep/facture/facture/facture.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +47,10 @@ import { TariflistComponent } from './chefrep/tarifs/tariflist/tariflist.compone
     ChamberformComponent,
     ChamberviewComponent,
     TarifformComponent,
-    TariflistComponent
+    TariflistComponent,
+    FacturelistComponent,
+    FactureformComponent,
+    FactureComponent
   ],
   imports: [
     BrowserModule,

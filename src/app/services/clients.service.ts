@@ -19,7 +19,7 @@ export class ClientsService {
   }
 
   getclient(id) {
-    return this.http.get<Client>(`${baseUrl}/${id}`);
+    return this.http.get<Client>(`${baseUrl}/find/${id}`);
   }
 
   createclient(client : Client): Observable<any> {
